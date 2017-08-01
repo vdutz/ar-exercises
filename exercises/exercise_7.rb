@@ -11,15 +11,17 @@ puts "----------"
 
 # Your code goes here ...
 
-puts "Enter a name for a new store:"
-new_name = gets.chomp
+#VALIDATION FOR NEW STORE ENTRY
+# puts "Enter a name for a new store:"
+# new_name = gets.chomp
 
-store = Store.new(name: new_name, annual_revenue: 255000, mens_apparel: false, womens_apparel: true)
-store.save
+# store = Store.new(name: new_name, annual_revenue: 255000, mens_apparel: false, womens_apparel: true)
+# store.save
 
-# puts store.valid?
-puts store.errors.full_messages
+# puts store.errors.full_messages
 
-# employee = @store1.employees.create(first_name: "James", last_name: "Cook", hourly_rate: 42)
 
-# puts employee.errors.full_messages
+#VALIDATION FOR NEW EMPLOYEE ENTRY
+employee = @store1.employees.create(first_name: "James", last_name: "Cook", hourly_rate: 42)
+
+puts employee.errors.full_messages
