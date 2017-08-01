@@ -11,11 +11,19 @@ class Store < ActiveRecord::Base
 
   validate :must_sell_mens_or_womens
 
+  before_destroy :prevent_destruction_of_store_with_employees
+
   private
 
   def must_sell_mens_or_womens
     if mens_apparel == false && womens_apparel == false
       errors.add(:base, "Must sell either mens or womens apparel")
+    end
+  end
+
+  def prevent_destruction_of_store_with_employees
+    if self.employees.size >= 0
+      throw :abort
     end
   end
 

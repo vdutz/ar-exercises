@@ -22,6 +22,6 @@ puts "----------"
 
 
 #VALIDATION FOR NEW EMPLOYEE ENTRY
-employee = @store1.employees.create(first_name: "James", last_name: "Cook", hourly_rate: 42)
+# employee = @store1.employees.create(first_name: "James", last_name: "Cook", hourly_rate: 42)
 
-puts employee.errors.full_messages
+# puts employee.errors.full_messages

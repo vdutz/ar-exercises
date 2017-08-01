@@ -10,4 +10,7 @@ require_relative './exercise_7'
 puts "Exercise 8"
 puts "----------"
 
-puts "TEST"
+employee = @store1.employees.new(first_name: "James", last_name: "Cook", hourly_rate: 42)
+employee.save
+
+puts employee.errors.full_messages

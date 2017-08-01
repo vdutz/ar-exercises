@@ -15,4 +15,18 @@ class Employee < ActiveRecord::Base
   validates :store,
             presence: true
 
+  # before_create :generate_password
+  after_create :generate_password
+
+  private
+
+    def generate_password
+      puts "METHOD CALLED"
+      pword = (0...8).map { (65 + rand(26)).chr }.join
+      self.update(password: pword)
+      # self.password = pword
+      # self.attributes = {password: pword}
+      puts pword
+    end
+
 end
